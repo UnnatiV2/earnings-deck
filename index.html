@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Q2 Earnings Deck — RevealJS</title>
+  <meta name="description" content="Quarterly earnings presentation for stakeholders with modern, interactive RevealJS features." />
+  <!-- RevealJS Core & Theme via CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reveal.css" />
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/theme/black.css" id="theme" />
+  <!-- Highlight.js styles (let Reveal pick default) -->
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@11/styles/github.css" />
+  <style>
+    .reveal .slide-logo { position: fixed; left: 16px; bottom: 16px; opacity: .7; font-size: 12px; }
+    .tag { display: inline-block; padding: .2rem .5rem; border-radius: 999px; background: #111; color:#fff; font-size:.7rem; }
+    .kpi { display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; }
+    .kpi .card { padding: 14px 16px; border-radius: 14px; box-shadow: 0 6px 24px rgba(0,0,0,.25); background: linear-gradient(135deg,#0f172a,#111827); color:#e5e7eb; }
+    .kpi .card h3 { margin:0; font-size: 1.1rem; letter-spacing:.2px; }
+    .kpi .card p { margin:.25rem 0 0; font-size: .95rem; }
+    @media (max-width: 900px) { .kpi { grid-template-columns: repeat(2, 1fr);} }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- TITLE SLIDE -->
+    <section>
+      <h1>Quarterly Earnings Report</h1>
+      <h3 class="fragment">Q2 FY2025</h3>
+      <p class="fragment">Prepared by: <strong>Technical Consultant</strong></p>
+      <p class="fragment">Contact: <a href="mailto:22f1000672@ds.study.iitm.ac.in">22f1000672@ds.study.iitm.ac.in</a></p>
+      <aside class="notes">
+        Welcome stakeholders. This deck demonstrates interactive features while summarizing key financial insights. Use → to proceed and press <kbd>S</kbd> for the Speaker View.
+      </aside>
+    </section>
+
+    <!-- KPI SLIDE WITH FRAGMENTS/ANIMATION -->
+    <section>
+      <h2>Highlights</h2>
+      <div class="kpi">
+        <div class="card fragment">
+          <h3>Revenue</h3>
+          <p><span class="tag">+12% YoY</span></p>
+        </div>
+        <div class="card fragment">
+          <h3>Net Income</h3>
+          <p><span class="tag">+8% YoY</span></p>
+        </div>
+        <div class="card fragment">
+          <h3>EPS (Diluted)</h3>
+          <p><span class="tag">₹ 18.40</span></p>
+        </div>
+        <div class="card fragment">
+          <h3>Operating Margin</h3>
+          <p><span class="tag">24.1%</span></p>
+        </div>
+      </div>
+      <aside class="notes">Reveal KPI cards one-by-one using fragments to build narrative momentum.</aside>
+    </section>
+
+    <!-- MARKDOWN SLIDE (meets requirement: at least one slide written in Markdown) -->
+    <section data-markdown>
+      <textarea data-template>
+# Revenue Mix (Markdown)
+
+- **Retail Banking** – 44%
+- **Corporate & Institutional** – 38%
+- **Wealth Management** – 12%
+- **Treasury & Other** – 6%
+
+> "What gets measured gets managed."
+
+*Speaker note:* Discuss diversification benefits and sensitivity to interest rates.
+      </textarea>
+      <aside class="notes">This slide is authored with Markdown via the data-markdown plugin.</aside>
+    </section>
+
+    <!-- CODE SAMPLE WITH SYNTAX HIGHLIGHTING -->
+    <section>
+      <h2>Code Sample: CAGR Utility</h2>
+      <pre><code class="language-python">def cagr(final_value: float, initial_value: float, years: float) -&gt; float:
+    """Compound Annual Growth Rate"""
+    return (final_value / initial_value) ** (1/years) - 1
+
+# Example: from ₹ 1,000 to ₹ 1,800 over 3 years
+print(f"CAGR: {cagr(1800, 1000, 3):.2%}")
+</code></pre>
+      <aside class="notes">Point out that RevealJS highlights code with highlight.js. Use this to show reproducible metrics logic.</aside>
+    </section>
+
+    <!-- MATH / FINANCIAL FORMULAS -->
+    <section>
+      <h2>Financial Formulas</h2>
+      <p>Net Present Value (discrete):</p>
+      <p>\[ \mathrm{NPV} = \sum_{t=1}^{T} \frac{CF_t}{(1 + r)^t} - C_0 \]</p>
+      <p>Capital Asset Pricing Model:</p>
+      <p>\[ E[R_i] = R_f + \beta_i\,(E[R_m] - R_f) \]</p>
+      <p>Compounding (continuous):</p>
+      <p>\[ A = Pe^{rt} \]</p>
+      <aside class="notes">Explain assumptions about discount rate r, horizon T, and risk premium in CAPM.</aside>
+    </section>
+
+    <!-- SPEAKER NOTES DEMO -->
+    <section>
+      <h2>Guidance & Outlook</h2>
+      <ul>
+        <li class="fragment">Full‑year revenue growth: <strong>10–12%</strong></li>
+        <li class="fragment">Opex discipline: <strong>&lt; 6%</strong> increase</li>
+        <li class="fragment">Credit cost: <strong>~80–90 bps</strong></li>
+      </ul>
+      <aside class="notes">
+        Prioritize sustainable growth. Reiterate risk controls and liquidity coverage. Invite Q&A after the final slide.
+      </aside>
+    </section>
+
+    <!-- CLOSING -->
+    <section>
+      <h2>Thank You</h2>
+      <p>Contact: <a href="mailto:22f1000672@ds.study.iitm.ac.in">22f1000672@ds.study.iitm.ac.in</a></p>
+      <p class="slide-logo">Built with RevealJS • Press <kbd>?</kbd> for help</p>
+      <aside class="notes">Wrap up and point stakeholders to the repository and GitHub Pages URL.</aside>
+    </section>
+
+  </div>
+</div>
+
+<!-- RevealJS scripts -->
+<script src="https://unpkg.com/reveal.js@5/dist/reveal.js"></script>
+<script src="https://unpkg.com/reveal.js@5/plugin/markdown/markdown.js"></script>
+<script src="https://unpkg.com/reveal.js@5/plugin/highlight/highlight.js"></script>
+<script src="https://unpkg.com/reveal.js@5/plugin/notes/notes.js"></script>
+<!-- Math plugin using KaTeX -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://unpkg.com/reveal.js@5/plugin/math/math.js"></script>
+
+<script>
+  const deck = new Reveal({
+    hash: true,
+    slideNumber: true,
+    progress: true,
+    controls: true,
+    transition: 'slide',
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+  });
+  deck.initialize();
+</script>
+</body>
+</html>
